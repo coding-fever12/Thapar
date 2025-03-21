@@ -1,0 +1,61 @@
+{
+    "manifest_version": 3,
+    "name": "AI Phishing Detector Pro",
+    "version": "1.0",
+    "permissions": [
+        "declarativeNetRequest",
+        "webNavigation",
+        "tabs",
+        "storage",
+        "notifications",
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*",
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office365.com/*",
+        "https://mail.yahoo.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://mail.google.com/*",
+                "https://outlook.live.com/*",
+                "https://outlook.office365.com/*",
+                "https://mail.yahoo.com/*"
+            ],
+            "js": [
+                "utils/model_loader.js",
+                "utils/email_scanner.js",
+                "content.js"
+            ],
+            "css": ["styles.css"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "web_accessible_resources": [{
+        "resources": [
+            "models/*",
+            "utils/*"
+        ],
+        "matches": [
+            "https://mail.google.com/*",
+            "https://outlook.live.com/*",
+            "https://outlook.office365.com/*",
+            "https://mail.yahoo.com/*"
+        ]
+    }]
+}

@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    width: 300px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.popup-container h1 {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.scan-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#scanCurrentPage {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#scanCurrentPage:hover {
+    background-color: #45a049;
+}
+
+#scanResult {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.safe {
+    color: #4CAF50;
+}
+
+.danger {
+    color: #E53935;
+}
+
+.history-section {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+}
+
+#historyList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#historyList li {
+    padding: 5px 0;
+}
+
+.settings-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.settings-link a {
+    color: #0078FF;
+    text-decoration: none;
+}
+
+.settings-link a:hover {
+    text-decoration: underline;
+}
